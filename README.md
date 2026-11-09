@@ -1,16 +1,21 @@
 # ddPCR linkage analysis
 
 This repository contains data and R code related to the manuscript **Prospects and limitations of multiplex digital
-PCR to resolve gene context in antibiotic resistance monitoring and research** by David Kneis, Thomas U. Berendonk, and Magali de la Cruz Barrón (DOI pending)
+PCR to resolve gene context in antibiotic resistance monitoring and research** by David Kneis, Thomas U. Berendonk, and Magali de la Cruz Barrón.
 
-For any additional information, please contact the corresponding author, David Kneis (firstname.lastname@tu-dresden.de).
+(DOI: *will be inserted after manuscript publication*)
+
+If you are seriously interested in any additional information not fully covered by this repository or the manuscript, please contact the corresponding author, David Kneis (firstname.lastname@tu-dresden.de).
 
 ## Tabular datasets
 
 ### General information
 
-### File contents 
+Tabular files are provided as plain text using a TAB character as column delimiter.
 
+### Files
+
+- **```observedFractionLinked.txt```**: This table holds experimental estimates of the fraction of linked markers when pure plasmid DNA is used as input. The true fraction of linkage equals one (100%) and observed numbers lower than one reflect (primarily) DNA fragmentation.
 
 ## Sequence datasets
 
@@ -22,14 +27,18 @@ The original plasmid was isolated from wastewater by [Caucci et al, 2016](10.109
 
 The files are provided in the common [fasta format](https://en.wikipedia.org/wiki/FASTA_format).
 
-### File contents 
+### Files 
 
 - **```pW12out26c.fasta```**: Original plasmid (58161 bp).
 - **```pW12out26x.fasta```**: Remaining plasmid after a major excision event likely triggerend by IS26 (36489 bp).
 
 ## Source code
 
-### External source code of relevance
+### General information
+
+All source code is for the free [R software](https://www.r-project.org).
+
+### External code of relevance
 
 Basic functions for analyzing and simulating linkage can be found in the author's R package [```molbio```](https://github.com/dkneis/molbio/). The relevant functions from that package are:
 
@@ -37,6 +46,8 @@ Basic functions for analyzing and simulating linkage can be found in the author'
 - **```ddPCR_linked_expected```**: Statistical expectation about linkage detection
 - **```ddPCR_simulate_duplex```**: Generates virtual observations
 
-### Source code provided in this repository
+### Files provided in this repository
 
 - **```copyNumberEffect.r```**: Estimates the uncertainty of ddPCR-based quantification in relation to the number of copies per reaction and the number of partitions.
+
+- **```divergingAbundanceEffect.r```**: Virtual experiments to demonstrate the impact of diverging marker abundances on the error of linkage quantification.
